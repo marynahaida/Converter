@@ -12,6 +12,7 @@ public class Main {
         while (z > 1) {
             System.out.println("Select what do you want to do\n" +
                     "\t1. Convert miles to km\n" +
+                    "\t2. Convert km to miles\n" +
                     "\t0. Exit");
             int q = scanner.nextInt();
             switch (q){
@@ -20,6 +21,11 @@ public class Main {
                     System.out.print("Miles: ");
                     double m = scanner.nextDouble();
                     System.out.println("Km: " + milesToKm(m));
+                    break;
+                case 2:
+                    System.out.print("Km: ");
+                    double k = scanner.nextDouble();
+                    System.out.println("Miles: " + kmToMiles(k));
                     break;
                 default:
                     System.out.println("You did entered wrong value");
@@ -32,4 +38,8 @@ public class Main {
         return km;
     }
 
+    public static double kmToMiles (double km) {
+        double miles = km / 1.60934;
+        return miles;
+    }
 }
